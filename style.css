@@ -1,0 +1,47 @@
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.container_menu {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.container_menu-logo {
+    height: 60px;
+    width: 90px;
+    margin: 20px;
+}
+.container_menu-text {
+    width: 115px;
+    height: 20px;
+    transform: rotate(270deg);
+    font-family: Optima;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.container_menu-iconBorder {
+    border: 1px solid #f1f1f1;
+    padding: 50px;
+    cursor: pointer;
+}
+.container_content {
+    background-image: url("img/porsch.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    flex-grow: 1;
+}
+

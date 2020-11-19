@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JS Job </title>
+    <style>
+        div {
+            line-height: 2;
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="formochka">
+        <div class="input">
+            <label>Представьтесь
+            <input type="text" class="textInput" size="40" placeholder="Имя" name="name">
+            </label>
+        </div>
+
+        <div class="radio">
+            Выберите пол
+                <label><input type="radio" class="radioInput" name="gender" value="male" checked> Мужской</label>
+                <label><input type="radio" class="radioInput" name="gender" value="female"> Женский</label>
+        </div>
+
+        <div class="checkbox">
+                <label><input type="checkbox" class="checkInput" name="preference" value="animals">Люблю животных</label>
+                <label><input type="checkbox" class="checkInput" name="preference" value="children">Люблю детей</label>
+        </div>
+
+        <div class="button">
+            <input type="submit" class="submitButton" value="Отправить">
+        </div>
+    </form>
+
+    <script>
+
+        const inputText = document.querySelector(".textInput");
+        inputText.addEventListener('input', text)
+        function text (event) {
+            console.log(event.target.value);
+        };
+
+        const radioButton = document.querySelectorAll(".radioInput");
+        function addChangeListener(element) {
+            element.addEventListener('change', showValue);
+        }
+        [...radioButton].forEach(addChangeListener);
+        function showValue (event) {
+            console.log(event.target.value, event.target.checked);
+        };
+
+        const checkbox = document.querySelectorAll(".checkInput");
+        [...checkbox].forEach(addChangeListener);
+
+        const form = document.querySelector("form");
+        form.addEventListener('submit', onSubmit);
+        function onSubmit (event) {
+            event.preventDefault();
+            const data = new FormData(form);
+            console.log(JSON.stringify(Object.fromEntries(data.entries())));
+        };
+
+
+    </script>
+
+</body>
+</html>
